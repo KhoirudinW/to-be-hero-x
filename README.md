@@ -9,7 +9,9 @@ Sebuah antarmuka interaktif untuk menampilkan dan memilih karakter dengan **anim
 > 🔍 Detail karakter muncul dengan transisi yang menarik  
 > ✅ Konfirmasi pemilihan karakter
 
+preview
 
+---
 
 ## 🚀 Fitur
 

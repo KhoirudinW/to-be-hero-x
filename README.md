@@ -1,6 +1,6 @@
 # 🎮 Character Selection Showcase
 
-Sebuah antarmuka interaktif untuk menampilkan dan memilih karakter dengan **animasi halus**, **transisi sinematik**, dan **tampilan detail yang dinamis**. Cocok untuk game, cerita visual, atau proyek kreatif yang ingin menampilkan karakter secara menarik.
+Sebuah antarmuka interaktif untuk menampilkan dan memilih karakter dengan **animasi halus**, **transisi sinematik**, dan **tampilan detail yang dinamis**. Cocok untuk game, cerita visual, atau proyek kreatif yang ingin menampilkan karakter secara menarik. Saya terinspirasi dari web To Be Hero X (https://tbhx.net/en/character/?chara=x)
 
 ## 📸 Preview
 

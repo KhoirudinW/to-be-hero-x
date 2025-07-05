@@ -1,55 +1,84 @@
-import React from 'react'
-import {useState} from 'react'
+import React, { useState, useEffect  } from 'react';
+import { motion } from 'framer-motion';
+import SelectCharacter from './SelectCharacter';
 
-function MenuSelect() {
-    const [selectChar, setSelectChar] = useState(false);
+function MenuSelect({data, onConfirm, onIndexChange}) {
 
-    const standbyChar = {
-        width: "100%",
-        height: "100%",
-        objectFit: 'cover'
+    const characters = data
+    const [selectedIndex, setSelectedIndex] = useState(0); // start from 'x'
+    const [isConfirmed, setIsConfirmed] = useState(false);
+
+
+    const cardWidth = 220;
+    const centerIndex = 2; // index tengah dari visible slot
+
+    const visibleCount = 5;
+
+    const handleSelect = (index) => {
+        setSelectedIndex(index);
     };
 
-    const selectedChar = {
-        width: "100%",
-        height: "300px",
-        objectFit: 'cover'
+    const getVisibleCharacters = () => {
+        const result = [];
+        for (let i = 0; i < visibleCount; i++) {
+            const index = (selectedIndex - centerIndex + i + characters.length) % characters.length;
+            result.push({ ...characters[index], originalIndex: index });
+        }
+        return result;
     };
 
-    const selectedCard = {
-        width: "200px",
-        height: "300px",
-        overflow: "hidden",
-        backgroundColor: "white",
-        borderRadius: "10px",
-    } 
-    
-    const standbyCard = {
-        width: "200px",
-        height: "200px",
-        overflow: "hidden",
-    }
+    useEffect(() => {
+        if (onIndexChange) {
+          onIndexChange(selectedIndex);
+        }
+      }, [selectedIndex]);
+
+    const visibleCharacters = getVisibleCharacters();
 
     return (
-        <div className='fixed top-0 w-full h-screen bg-black z-10'>
-            <div className="flex flex-col gap-5 pt-32 min-h-screen">
-                <div className="flex gap-5 justify-center items-center">
-                    <div style={standbyCard}>
-                        <button onClick={() => setSelectChar(prev => !prev)} className='border-none cursor-pointer'>
-                            <img style={selectChar ? selectedChar : standbyChar} src="./src/assets/queen.png" alt="" />
-                        </button>
-                    </div>
-                    <div style={selectedCard}>
-                        <img style={selectedChar} src="./src/assets/x.png" alt="" />
-                    </div>
-                    <div className="w-[200px] h-[200px] overflow-hidden">
-                        <img style={standbyChar} src="./src/assets/nice.png" alt="" />
-                    </div>
-                </div>
-                <h1 className='mx-auto mt-16 font-bold text-9xl uppercase font-oswald'>halo</h1>
-            </div>
-        </div>
-    )
+        <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: isConfirmed ? 0 : 1 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 w-full h-screen bg-black z-10"
+        >
+
+            <motion.img
+                src="./src/assets/more/kiri1.png"
+                alt=""
+                initial={{ x: -200, opacity: 0 }}
+                animate={{
+                    x: isConfirmed ? -500 : 0,
+                    opacity: isConfirmed ? 0 : 0.5
+                }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="h-[100vh] fixed -left-4 -z-10"
+            />
+
+            <motion.img
+                src="./src/assets/more/kanan1.png"
+                alt=""
+                initial={{ x: 200, opacity: 0 }}
+                animate={{
+                    x: isConfirmed ? 500 : 0,
+                    opacity: isConfirmed ? 0 : 0.5
+                }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="h-[100vh] fixed -right-4 -z-10"
+            />
+            <SelectCharacter
+                characters={characters}
+                selectedIndex={selectedIndex}
+                handleSelect={handleSelect}
+                visibleCharacters={visibleCharacters}
+                isConfirmed={isConfirmed}
+                setIsConfirmed={setIsConfirmed}
+                onConfirm={(char) => {
+                    onConfirm(char)
+                }}
+            />
+        </motion.div>
+    );
 }
 
-export default MenuSelect
+export default MenuSelect;

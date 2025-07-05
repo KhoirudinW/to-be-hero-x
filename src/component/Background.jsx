@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 
-function Background(data) {
+function Background({data}) {
   const videoRef = useRef(null);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const start = data.data.start;
-    const end = data.data.end;
+    const start = data.start;
+    const end = data.end;
 
     const handleLoaded = () => {
       video.currentTime = start;
@@ -38,11 +38,11 @@ function Background(data) {
   };
 
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="absolute w-full h-screen -z-10">
       {/* VIDEO LOOP MANUAL 5s–10s */}
       <video
         ref={videoRef}
-        src={data.data.src}
+        src={data.src}
         className="fixed top-0 left-0 w-full h-full object-cover brightness-50 -z-20"
         muted
         playsInline
@@ -54,18 +54,14 @@ function Background(data) {
       {/* IMAGE */}
       <img
         src="./src/assets/more/kiri.png"
-        className="h-[95vh] opacity-80 fixed top-8 -left-1 z-10"
+        className="h-[95vh] opacity-80 fixed top-8 -left-1 -z-10"
         alt=""
       />
       <img
         src="./src/assets/more/kanan.png"
-        className="h-[95vh] opacity-80 fixed top-8 right-0 z-10"
+        className="h-[95vh] opacity-80 fixed top-8 right-0 -z-10"
         alt=""
       />
-
-      <div className="relative z-20 p-10 text-white">
-
-      </div>
     </div>
   );
 }

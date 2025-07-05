@@ -9,7 +9,7 @@ Sebuah antarmuka interaktif untuk menampilkan dan memilih karakter dengan **anim
 > 🔍 Detail karakter muncul dengan transisi yang menarik  
 > ✅ Konfirmasi pemilihan karakter
 
-preview
+![0706 (1)](https://github.com/user-attachments/assets/2c369cb2-5d4b-4212-8b8d-5f4e7fd43989)
 
 ---
 

@@ -7,12 +7,30 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
     const characters = data
     const [selectedIndex, setSelectedIndex] = useState(0); // start from 'x'
     const [isConfirmed, setIsConfirmed] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(5);
+    const [centerIndex, setCenterIndex] = useState(2)
+
+    useEffect(() => {
+    const handleResize = () => {
+        const width = window.innerWidth;
+        if (width < 768) {
+        setVisibleCount(3); // Tablet & mobile
+        setCenterIndex(1);
+        } else {
+        setVisibleCount(5); // Laptop & Desktop
+        setCenterIndex(2);
+        }
+    };
+
+    console.log(centerIndex);
+
+    handleResize(); // initial run
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
 
-    const cardWidth = 220;
-    const centerIndex = 2; // index tengah dari visible slot
-
-    const visibleCount = 5;
+    // const visibleCount = 5;
 
     const handleSelect = (index) => {
         setSelectedIndex(index);
@@ -20,10 +38,16 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
 
     const getVisibleCharacters = () => {
         const result = [];
-        for (let i = 0; i < visibleCount; i++) {
-            const index = (selectedIndex - centerIndex + i + characters.length) % characters.length;
-            result.push({ ...characters[index], originalIndex: index });
+        const total = characters.length;
+      
+        for (let offset = -centerIndex; offset <= visibleCount - centerIndex - 1; offset++) {
+          const index = (selectedIndex + offset + total) % total;
+          result.push({
+            ...characters[index],
+            originalIndex: index,
+          });
         }
+      
         return result;
     };
 
@@ -52,7 +76,7 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
                     opacity: isConfirmed ? 0 : 0.5
                 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
-                className="h-[100vh] fixed -left-4 -z-10"
+                className="fixed w-[40%] md:w-auto md:h-[100vh] top-0 -left-4 -z-10 "
             />
 
             <motion.img
@@ -64,7 +88,7 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
                     opacity: isConfirmed ? 0 : 0.5
                 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
-                className="h-[100vh] fixed -right-4 -z-10"
+                className="fixed w-[40%] md:w-auto md:h-[100vh] bottom-0 -right-4 -z-10"
             />
             <SelectCharacter
                 characters={characters}
@@ -73,6 +97,7 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
                 visibleCharacters={visibleCharacters}
                 isConfirmed={isConfirmed}
                 setIsConfirmed={setIsConfirmed}
+                centerIndex={centerIndex}
                 onConfirm={(char) => {
                     onConfirm(char)
                 }}

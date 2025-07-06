@@ -9,44 +9,38 @@ const SelectCharacter = ({
   visibleCharacters,
   isConfirmed,
   setIsConfirmed,
-  onConfirm
+  onConfirm,
+  centerIndex
 }) => {
-  const centerIndex = 2;
+
+  const isMobile = window.innerWidth < 768;
   const selectedChar = visibleCharacters[centerIndex] || {};
-
-  const [xOffset, setXOffset] = useState(0);
-
-  useEffect(() => {
-    setXOffset(-selectedIndex * 220); // 220 = card width + gap
-  }, [selectedIndex]);
 
   return (
     <div className="flex flex-col gap-5 pt-32 min-h-screen">
-      <h1 className="mx-auto mt-16 font-bold text-4xl uppercase font-oswald text-white">Select character</h1>
+      <h1 className="mx-auto mt-16 font-bold text-2xl md:text-4xl uppercase font-oswald text-white">Select character</h1>
 
-      <div className="relative w-[1200px] h-[400px] pt-3 mx-auto overflow-hidden">
+      <div className={`relative w-[100%] lg:scale-100 max-w-6xl md:h-[400px] min-h-[300px] pt-3  mx-auto overflow-hidden`}>
         <motion.div
-          className="flex gap-5 absolute"
-          animate={{ x: setXOffset }}
-          transition={{  duration: 1, ease: 'easeInOut' }}
+          className="flex gap-2  w-full justify-center absolute"
         >
           <button
             onClick={() => handleSelect((selectedIndex - 1 + characters.length) % characters.length)}
-            className="text-white text-4xl hover:scale-125 transition"
+            className="text-white text-2xl md:text-4xl hover:scale-125 transition xl:block hidden"
           >
             ←
           </button>
 
           {visibleCharacters.map((char, i) => {
             const isSelected = i === centerIndex;
-
+            // console.log(centerIndex);
             return (
               <motion.div
                 key={`${char.name}-${char.originalIndex}`}
                 className={`transition-all duration-500 ${isSelected ? 'z-10' : 'z-0'}`}
                 style={{
-                    width: '200px',
-                    height: isSelected ? '300px' : '200px',
+                    width: isSelected ? 'min(30vw, 220px)' : 'min(22vw, 180px)',
+                    height: isSelected ? isMobile   ? '250px'  : '300px' : '200px',
                     overflow: 'hidden',
                     borderRadius: isSelected ? 10 : 0,
                     backgroundColor: isSelected ? char.color : 'transparent',
@@ -62,16 +56,16 @@ const SelectCharacter = ({
               >
                 <button
                   onClick={() => handleSelect(char.originalIndex)}
-                  className="border-none relative cursor-pointer w-full h-full"
+                  className="border-none relative cursor-pointer w-full h-full border border-blue-50"
                 >
                   <img
                     src={char.img}
                     alt={char.name}
                     style={{
+                      transform: isSelected ? 'scale(1.3)' : 'scale(1)',
                       width: '100%',
                       height: isSelected ? '300px' : '100%',
                       objectFit: 'cover',
-                      transform: isSelected ? 'scale(1.5)' : 'scale(1)',
                       transition: 'all 0.3s ease',
                       position: 'absolute',
                       left: isSelected ? char.styleSelect1.left : 0,
@@ -85,7 +79,7 @@ const SelectCharacter = ({
 
           <button
             onClick={() => handleSelect((selectedIndex + 1) % characters.length)}
-            className="text-white text-4xl hover:scale-125 transition"
+            className="text-white text-2xl md:text-4xl hover:scale-125 transition hidden xl:block"
           >
             →
           </button>

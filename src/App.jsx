@@ -198,7 +198,7 @@ const App = () => {
                         color: "#00bbff",
                         styleSelect1: {
                                 top: 0,
-                                left: "-50px",
+                                left: "-20px",
                         },
                         styleSelect2: {
                                 left: "-240px",
@@ -238,8 +238,9 @@ const App = () => {
                 },
         ];
 
-        const [showFullCharacter, setShowFullCharacter] = useState(false);
-        const [selectedCharData, setSelectedCharData] = useState(null);
+        const [showFullCharacter, setShowFullCharacter] = useState(true);
+        // const [selectedCharData, setSelectedCharData] = useState(null);
+        const [selectedCharData, setSelectedCharData] = useState(characters[0]);
         // console.log(characters[0].styleSelect2.left);
 
         const handleBack = () => {
@@ -248,31 +249,33 @@ const App = () => {
         };
       
         return (
-          <div className="relative min-h-[100vh] text-white overflow-hidden">
-              <Background data={charSelect[indexVd]} />
-              <FullCharData
-                  character={selectedCharData}
-                  allChar={characters}
-                  onConfirm={(char) => {
-                          setSelectedCharData(char);
-                  }}
-                  onIndexChange={(i) => setIndexVd(i)}
-                  back={handleBack}
-              />
-              {!showFullCharacter ? (
-                  <MenuSelect
-                      data={characters}
-                      onConfirm={(char) => {
-                          const index = characters.findIndex(c => c.name === char.name);
-                          if (index !== -1) setIndexVd(index); // <-- ini
-                          setSelectedCharData(char);
-                          setShowFullCharacter(true);
-                      }}
-                      onIndexChange={(i) => setIndexVd(i)}
-                      
-                  />
-              ) : null}
-          </div>
+                <div 
+                className="relative w-[100dvw] min-h-[100dvh] text-white overflow-hidden"
+                >
+                        <Background data={charSelect[indexVd]} />
+                        <FullCharData
+                                character={selectedCharData}
+                                allChar={characters}
+                                onConfirm={(char) => {
+                                        setSelectedCharData(char);
+                                }}
+                                onIndexChange={(i) => setIndexVd(i)}
+                                back={handleBack}
+                        />
+                        {!showFullCharacter ? (
+                                <MenuSelect
+                                        data={characters}
+                                        onConfirm={(char) => {
+                                                const index = characters.findIndex(c => c.name === char.name);
+                                                if (index !== -1) setIndexVd(index); // <-- ini
+                                                setSelectedCharData(char);
+                                                setShowFullCharacter(true);
+                                        }}
+                                        onIndexChange={(i) => setIndexVd(i)}
+                                
+                                />
+                        ) : null}
+                </div>
         );
 };
 

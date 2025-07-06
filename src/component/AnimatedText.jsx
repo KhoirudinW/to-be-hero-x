@@ -25,7 +25,7 @@ function AnimatedText({ text, color }) {
     
         return (
             <h1
-                className="mx-auto font-bold text-9xl uppercase font-oswald flex justify-center select-none"
+                className="mx-auto font-bold text-6xl md:text-9xl uppercase font-oswald flex justify-center select-none"
                 style={{ color }}
             >
                 {text.split('').map((char, index) => (

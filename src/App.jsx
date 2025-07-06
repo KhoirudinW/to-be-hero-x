@@ -238,9 +238,9 @@ const App = () => {
                 },
         ];
 
-        const [showFullCharacter, setShowFullCharacter] = useState(true);
-        // const [selectedCharData, setSelectedCharData] = useState(null);
-        const [selectedCharData, setSelectedCharData] = useState(characters[0]);
+        const [showFullCharacter, setShowFullCharacter] = useState(false);
+        const [selectedCharData, setSelectedCharData] = useState(null);
+        // const [selectedCharData, setSelectedCharData] = useState(characters[0]);
         // console.log(characters[0].styleSelect2.left);
 
         const handleBack = () => {

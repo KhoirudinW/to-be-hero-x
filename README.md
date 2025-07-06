@@ -1,12 +1,46 @@
-# React + Vite
+# 🎮 Character Selection Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive character selection interface featuring **smooth animations**, **cinematic transitions**, and **dynamic character details**. Ideal for games, visual novels, or any creative projects that aim to present characters in an engaging way.
 
-Currently, two official plugins are available:
+Inspired by the character page of [To Be Hero X](https://tbhx.net/en/character/?chara=x).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> ✨ Smooth animations during character selection  
+> 🔄 Character images change on hover or selection  
+> 🔍 Detailed information appears with cinematic transitions  
+> ✅ Confirmation button for final character choice  
+
+![Character Showcase Preview](https://github.com/user-attachments/assets/2c369cb2-5d4b-4212-8b8d-5f4e7fd43989)
+
+---
+
+## 🚀 Features
+
+- 🎨 Visually select characters with hover effects and transitions
+- 📄 Dynamic character details: name, description, rank, and image
+- 🔁 Seamless UX using **Framer Motion** animations
+- ⚙️ Modular and customizable React components
+- ✅ Interactive confirmation button for selected character
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js** – UI development
+- **Framer Motion** – Animation and transitions
+- **Tailwind CSS** – Utility-first styling
+
+---
+
+## 📦 Getting Started
+
+To run the project locally:
+
+```bash
+git clone https://github.com/username/to-be-hero-x.git
+cd to-be-hero-x
+npm install
+npm run dev

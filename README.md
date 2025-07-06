@@ -1,40 +1,46 @@
 # 🎮 Character Selection Showcase
 
-Sebuah antarmuka interaktif untuk menampilkan dan memilih karakter dengan **animasi halus**, **transisi sinematik**, dan **tampilan detail yang dinamis**. Cocok untuk game, cerita visual, atau proyek kreatif yang ingin menampilkan karakter secara menarik. Saya terinspirasi dari web To Be Hero X (https://tbhx.net/en/character/?chara=x)
+An interactive character selection interface featuring **smooth animations**, **cinematic transitions**, and **dynamic character details**. Ideal for games, visual novels, or any creative projects that aim to present characters in an engaging way.
+
+Inspired by the character page of [To Be Hero X](https://tbhx.net/en/character/?chara=x).
+
+---
 
 ## 📸 Preview
 
-> ✨ Animasi smooth saat memilih karakter  
-> 🔄 Gambar karakter berubah saat di-hover atau diubah  
-> 🔍 Detail karakter muncul dengan transisi yang menarik  
-> ✅ Konfirmasi pemilihan karakter
+> ✨ Smooth animations during character selection  
+> 🔄 Character images change on hover or selection  
+> 🔍 Detailed information appears with cinematic transitions  
+> ✅ Confirmation button for final character choice  
 
-![0706 (1)](https://github.com/user-attachments/assets/2c369cb2-5d4b-4212-8b8d-5f4e7fd43989)
-
----
-
-## 🚀 Fitur
-
-- 🎨 Pilih karakter secara visual dengan efek hover dan transisi
-- 📄 Detail lengkap karakter: nama, deskripsi, ranking, dan gambar
-- 🔁 Animasi Framer Motion untuk pengalaman UX yang halus
-- 🔧 Komponen modular dan mudah dikustomisasi
-- ✅ Konfirmasi karakter dengan tombol interaktif
+![Character Showcase Preview](https://github.com/user-attachments/assets/2c369cb2-5d4b-4212-8b8d-5f4e7fd43989)
 
 ---
 
-## 🛠️ Teknologi
+## 🚀 Features
 
-- **React.js**
-- **Framer Motion**
-- **Tailwind CSS**
+- 🎨 Visually select characters with hover effects and transitions
+- 📄 Dynamic character details: name, description, rank, and image
+- 🔁 Seamless UX using **Framer Motion** animations
+- ⚙️ Modular and customizable React components
+- ✅ Interactive confirmation button for selected character
 
 ---
 
-## 📦 Cara Menjalankan
+## 🛠️ Tech Stack
+
+- **React.js** – UI development
+- **Framer Motion** – Animation and transitions
+- **Tailwind CSS** – Utility-first styling
+
+---
+
+## 📦 Getting Started
+
+To run the project locally:
 
 ```bash
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
+git clone https://github.com/username/to-be-hero-x.git
+cd to-be-hero-x
 npm install
 npm run dev

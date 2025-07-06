@@ -56,7 +56,7 @@ const FullCharData = ({character, allChar, onConfirm, onIndexChange, back}) => {
             <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-between bg-black/50 ">
                 <div className='z-10'>
                     {/* Back Button */}
-                    <div className="flex justify-end mb-4">
+                    <div className="flex flex-row-reverse justify-end mb-4">
                         <button className="bg-red-500 py-1 px-3 rounded-md" onClick={back}>
                             Back
                         </button>

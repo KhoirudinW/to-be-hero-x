@@ -74,7 +74,7 @@ const FullCharData = ({character, allChar, onConfirm, onIndexChange, back}) => {
                     </h1>
                     {character.img1 && (
                         <img
-                        src="/public/assets/more/icon_changebtn.svg"
+                        src="/assets/more/icon_changebtn.svg"
                         alt=""
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
@@ -140,7 +140,7 @@ const FullCharData = ({character, allChar, onConfirm, onIndexChange, back}) => {
                 transition={{duration: openSelection ? 1 : 1.5}}
                 onClick={() => setOpenSelection((prev)=> !prev)}
             >
-                <img src="/public/assets/more/up.svg" width={30} alt="" />
+                <img src="/assets/more/up.svg" width={30} alt="" />
         </motion.button>
 
         {/* Toggle SelectCharacter2 */}

@@ -53,12 +53,12 @@ function Background({data}) {
 
       {/* IMAGE */}
       <img
-        src="/public/assets/more/kiri.png"
+        src="/assets/more/kiri.png"
         className="w-[50%] md:w-auto md:h-[95vh] opacity-80 fixed top-8 -left-1 -z-10"
         alt=""
       />
       <img
-        src="/public/assets/more/kanan.png"
+        src="/assets/more/kanan.png"
         className="w-[50%] md:w-auto md:h-[95vh] opacity-80 fixed bottom-8 md:top-8 right-0 -z-10"
         alt=""
       />

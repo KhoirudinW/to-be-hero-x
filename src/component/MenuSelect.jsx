@@ -68,7 +68,7 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
         >
 
             <motion.img
-                src="./src/assets/more/kiri1.png"
+                src="/public/assets/more/kiri1.png"
                 alt=""
                 initial={{ x: -200, opacity: 0 }}
                 animate={{
@@ -80,7 +80,7 @@ function MenuSelect({data, onConfirm, onIndexChange}) {
             />
 
             <motion.img
-                src="./src/assets/more/kanan1.png"
+                src="/public/assets/more/kanan1.png"
                 alt=""
                 initial={{ x: 200, opacity: 0 }}
                 animate={{

@@ -3,6 +3,25 @@ import MenuSelect from "./component/MenuSelect";
 import FullCharData from "./component/FullCharData";
 import Background from "./component/Background";
 
+
+// Import semua gambar
+import xImg from "./assets/x.png";
+import queenImg from "./assets/queen.png";
+import queenV2Img from "./assets/queenV2.png";
+import dragonBoyImg from "./assets/dragon-boy.png";
+import ghostbladeImg from "./assets/ghostblade.png";
+import johnniesImg from "./assets/the-johnnies.png";
+import loliImg from "./assets/loli.png";
+import loliV2Img from "./assets/loliV2.png";
+import cyanImg from "./assets/cyan.png";
+import cyanV2Img from "./assets/cyanV2.png";
+import ahuImg from "./assets/ahu.png";
+import eSoulImg from "./assets/e-soul.png";
+import eSoulV2Img from "./assets/e-soulV2.png";
+import niceImg from "./assets/nice.png";
+import linlinImg from "./assets/nice(linlin).png";
+import linlinV2Img from "./assets/nice(linlinV2).png";
+
 const App = () => {
         const [indexVd, setIndexVd] = useState(1);
 
@@ -67,7 +86,7 @@ const App = () => {
         const characters = [
                 {
                         name: "x",
-                        img: "/assets/x.png",
+                        img: xImg,
                         desc: "A man in a suit who claimed the title of X in the blink of an eye. His lack of affiliation to any organization makes him all the more enigmatic.",
                         title: "Top hero X, known to all and known by none",
                         rank: "1",
@@ -82,8 +101,8 @@ const App = () => {
                 },
                 {
                         name: "queen",
-                        img: "/assets/queen.png",
-                        img1: "/assets/queenV2.png",
+                        img: queenImg,
+                        img1: queenV2Img,
                         desc: "The pinnacle of female heroes, Queen is superior in many ways. She hopes to win the tournament to bring order to the world.",
                         title: "Lady for whom no less than Number One will suffice",
                         rank: "2",
@@ -98,7 +117,7 @@ const App = () => {
                 },
                 {
                         name: "dragonboy",
-                        img: "/assets/dragon-boy.png",
+                        img: dragonBoyImg,
                         desc: "An unruly lone wolf known for his superhuman resilience, he eagerly awaits his opportunity to take the title of X with his indomitable fighting spirit.",
                         title: "Outsider of unwavering ambition",
                         rank: "3",
@@ -113,7 +132,7 @@ const App = () => {
                 },
                 {
                         name: "ghostblade",
-                        img: "/assets/ghostblade.png",
+                        img: ghostbladeImg,
                         desc: "A cool-headed hero who completes his mission without uttering a single word. He is loved by his many fans for the silence with which he completes his work and for the chiseled, handsome face behind the mask.",
                         title: "The silent killer from whom even speech knows no escape",
                         rank: "4",
@@ -128,7 +147,7 @@ const App = () => {
                 },
                 {
                         name: "the johnnies",
-                        img: "/assets/the-johnnies.png",
+                        img: johnniesImg,
                         desc: "A hero duo that's become famous for their mascott-like charm. Once Big Johnny goes berserk, only Little Johnny can stop him.",
                         title: "An unwavering bond between a man and a beast",
                         rank: "5",
@@ -143,8 +162,8 @@ const App = () => {
                 },
                 {
                         name: "loli",
-                        img: "/assets/loli.png",
-                        img1: "/assets/loliV2.png",
+                        img: loliImg,
+                        img1: loliV2Img,
                         desc: "A girl in a battle suit jam-packed with all kinds of tricky gadgets. She confronts all her opponents with engineering talent and a strong sense of justice.",
                         title: "Gifted mech girl hero of justice",
                         rank: "6",
@@ -159,8 +178,8 @@ const App = () => {
                 },
                 {
                         name: "Lucky cyan",
-                        img: "/assets/cyan.png",
-                        img1: "/assets/cyanV2.png",
+                        img: cyanImg,
+                        img1: cyanV2Img,
                         desc: "A singer-songwriter blessed with exceptional luck and a natural voice. Lucky Cyan is overwhelmingly popular both as a hero and as a musician.",
                         title: "The color of happiness, shared through song",
                         rank: "7",
@@ -175,7 +194,7 @@ const App = () => {
                 },
                 {
                         name: "ahu",
-                        img: "/assets/ahu.png",
+                        img: ahuImg,
                         desc: "An empathic, loyal hero dog that made it into the Top 10 at record speed, Ahu turns gratitude into superpowers.",
                         title: "Hard-boiled superdog",
                         rank: "8",
@@ -190,8 +209,8 @@ const App = () => {
                 },
                 {
                         name: "e-soul",
-                        img: "/assets/e-soul.png",
-                        img1: "/assets/e-soulV2.png",
+                        img: eSoulImg,
+                        img1: eSoulV2Img,
                         desc: "A legendary hero long cherished by the people. Slays his enemies with lightning speed.",
                         title: "A streak of light inherited",
                         rank: "9",
@@ -207,7 +226,7 @@ const App = () => {
                 },
                 {
                         name: "nice",
-                        img: "/assets/nice.png",
+                        img: niceImg,
                         desc: "A manifestation of the perfect hero as imagined by the people. He brings the elegance of a ballerino to all his battles, mesmerizing all who witness them.",
                         title: "No less than a flawless dance and a flawless victory for Mr. Perfect",
                         rank: "10",
@@ -222,8 +241,8 @@ const App = () => {
                 },
                 {
                         name: "lin ling",
-                        img: "/assets/nice(linlin).png",
-                        img1: "/assets/nice(linlinV2).png",
+                        img: linlinImg,
+                        img1: linlinV2Img,
                         desc: "Staff at the company that produces commercials for Nice and Moon. He is worked to the bone by his employers with hardly any time off.",
                         title: null,
                         rank: "10",

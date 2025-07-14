@@ -5,22 +5,22 @@ import Background from "./component/Background";
 
 
 // Import semua gambar
-import xImg from "./assets/x.png";
-import queenImg from "./assets/queen.png";
-import queenV2Img from "./assets/queenV2.png";
-import dragonBoyImg from "./assets/dragon-boy.png";
-import ghostbladeImg from "./assets/ghostblade.png";
-import johnniesImg from "./assets/the-johnnies.png";
-import loliImg from "./assets/loli.png";
-import loliV2Img from "./assets/loliV2.png";
-import cyanImg from "./assets/cyan.png";
-import cyanV2Img from "./assets/cyanV2.png";
-import ahuImg from "./assets/ahu.png";
-import eSoulImg from "./assets/e-soul.png";
-import eSoulV2Img from "./assets/e-soulV2.png";
-import niceImg from "./assets/nice.png";
-import linlinImg from "./assets/nice(linlin).png";
-import linlinV2Img from "./assets/nice(linlinV2).png";
+import xImg from "/public/assets/x.png";
+import queenImg from "/public/assets/queen.png";
+import queenV2Img from "/public/assets/queenV2.png";
+import dragonBoyImg from "/public/assets/dragon-boy.png";
+import ghostbladeImg from "/public/assets/ghostblade.png";
+import johnniesImg from "/public/assets/the-johnnies.png";
+import loliImg from "/public/assets/loli.png";
+import loliV2Img from "/public/assets/loliV2.png";
+import cyanImg from "/public/assets/cyan.png";
+import cyanV2Img from "/public/assets/cyanV2.png";
+import ahuImg from "/public/assets/ahu.png";
+import eSoulImg from "/public/assets/e-soul.png";
+import eSoulV2Img from "/public/assets/e-soulV2.png";
+import niceImg from "/public/assets/nice.png";
+import linlinImg from "/public/assets/nice(linlin).png";
+import linlinV2Img from "/public/assets/nice(linlinV2).png";
 
 const App = () => {
         const [indexVd, setIndexVd] = useState(1);
